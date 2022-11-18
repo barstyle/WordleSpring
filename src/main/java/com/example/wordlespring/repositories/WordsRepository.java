@@ -1,5 +1,6 @@
-package com.example.wordlespring.repo;
+package com.example.wordlespring.repositories;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import java.io.FileNotFoundException;
@@ -9,16 +10,19 @@ import java.util.List;
 import java.util.Scanner;
 
 @Repository
-public class AllWords {
+public class WordsRepository {
 
     private ArrayList<String> arrayList;
+
+    @Value("${dict}")
+    private String dict;
 
     private ArrayList<String> getList() {
         if (arrayList == null) {
             arrayList = new ArrayList<>();
             FileReader fileReader = null;
             try {
-                fileReader = new FileReader("src/main/resources/static/dict.txt");
+                fileReader = new FileReader(dict);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -34,7 +38,6 @@ public class AllWords {
     }
 
     public List<String> getAllWordsList() {
-
         return getList();
     }
 
