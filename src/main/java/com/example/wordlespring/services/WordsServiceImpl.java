@@ -2,7 +2,6 @@ package com.example.wordlespring.services;
 
 import com.example.wordlespring.repositories.WordsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 
