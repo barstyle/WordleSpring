@@ -2,17 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
-    <style>
-        div.scroll {
-            margin:4px;
-            padding:4px;
-            width: auto;
-            height: 500px;
-            overflow-x: hidden;
-            overflow-y: auto;
-            text-align:center;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home page</title>
@@ -23,8 +13,12 @@
 
 <div class="container text-center">
     <h2> [[${wordsList.size}]] - слов сейчас осталось в словаре</h2>
+    <div class="progress" style="height: 20px;">
+        <div class="progress-bar" role="progressbar" th:style="${progress}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">[[${wordsList.size}]]</div>
+    </div>
     <br>
 </div>
+
 
 <div class="container text-center">
     <div class="row">
@@ -74,26 +68,23 @@
                 </ul>
             </nav>
         </div>
+
         <div class="col col__center text-uppercase">
             <div>
                 <a class="btn btn-info" th:href="@{/reset}">reset</a>
             </div>
-
             <br>
-
             <div class="scroll">
                 <table class="table table-striped">
                     <tbody>
                     <tr th:each="word : ${wordsList}">
                         <td th:text="${word}">Mark</td>
                     </tr>
-
                     </tbody>
                 </table>
             </div>
-
-
         </div>
+
         <div class="col col__right ">
             <div>
                 <b>Нажмите, если буква в слове есть</b>

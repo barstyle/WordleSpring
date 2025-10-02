@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+
+dict: "target/classes/static/dict.txt"
+dict_docker: "/app/data/dict.txt"
