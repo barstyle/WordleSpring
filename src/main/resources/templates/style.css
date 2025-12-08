@@ -7,3 +7,38 @@ div.scroll {
     overflow-y: auto;
     text-align:center;
 }
+
+.form-cell-group {
+    display: flex;
+    justify-content: center; /* выравнивание по горизонтали */
+    gap: 8px;                /* расстояние между инпутами */
+    margin: 20px auto;       /* отступы сверху и снизу + центрирование */
+}
+
+.form-cell-group .form-input {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+/* Немного анимации при фокусе — для "wordle"-стиля */
+.form-cell-group .form-input:focus {
+    border-color: #007aff;
+    box-shadow: 0 0 5px rgba(0, 122, 255, 0.5);
+    outline: none;
+}
+
+@media (max-width: 480px) {
+    .form-cell-group .uk-input {
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+    }
+}
+
+

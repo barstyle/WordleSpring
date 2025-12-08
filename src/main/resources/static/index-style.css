@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input.text-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.fixed-positions {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+.fixed-positions input {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    border: 2px solid #729a6a;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.15s ease;
+    color: #333;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    white-space: pre-wrap;
+}
+
+.error {
+    color: red;
+}
+
+.position-label {
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+}
+
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    user-select: none; /* запрещаем выделять текст */
+}
+
+.keyboard-row {
+    display: flex;
+    margin-bottom: 6px;
+}
+
+.key {
+    width: 44px;
+    height: 44px;
+    margin: 2px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+    transition: all 0.15s ease;
+    color: #333;
+}
+
+.key:hover {
+    background-color: #e8e8e8;
+}
+
+.key:active,
+.key.active-key {
+    background-color: #d0d0d0;
+    transform: translateY(1px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.active-key {
+    background-color: #a0a0a0; /* Затемненный цвет */
+}
+#backspace,
+#backspace-required,
+#backspace-excluded{
+    width: 70px;
+    background-color: #ffecec;
+    color: #d00;
+}
+
+#backspace:hover,
+#backspace-required:hover,
+#backspace-excluded:hover {
+    background-color: #ffd5d5;
+}
+
+#clear-field,
+#clear-field-required,
+#clear-field-excluded{
+    width: 90px;
+    background-color: #e6f7ff;
+    color: #007acc;
+}
+
+#clear-field:hover,
+#clear-field-required:hover,
+#clear-field-excluded:hover {
+    background-color: #cceeff;
+}
+
+.special-key {
+    background-color: #eef5ff;
+    color: #0066cc;
+    font-size: 0.9em;
+}

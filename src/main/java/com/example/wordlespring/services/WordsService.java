@@ -1,15 +1,19 @@
 package com.example.wordlespring.services;
 
+import com.example.wordlespring.dto.RequestWordleDto;
+
 import java.util.List;
 
 public interface WordsService {
 
-    public List<String> getWords();
+    List<String> getWords();
 
-    public void getWordsWithOutChar(String ch);
+    void getWordsWithOutChar(String ch);
 
-    public void getWordsLeaveChar(String ch);
+    void getWordsLeaveChar(String ch);
 
-    public void resetWordsList();
+    void resetWordsList();
+
+    List<String> getWordsList(RequestWordleDto request);
 
 }

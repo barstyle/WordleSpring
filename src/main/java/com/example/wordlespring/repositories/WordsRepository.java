@@ -50,20 +50,4 @@ public class WordsRepository {
     public List<String> getAllWordsList() {
         return getList();
     }
-
-    public void getWordsWithOutChar(String ch) {
-        arrayList.removeIf(word -> word.contains(ch));
-    }
-
-    public void getWordsWithLeaveChar(String ch) {
-        arrayList.removeIf(word -> !word.contains(ch));
-    }
-
-    public void resetButton () {
-        arrayList = null;
-    }
-
-    public void getWordsWithCharByIndex(String ch, int index) {
-        arrayList.removeIf(word -> word.split("")[index].equals(ch));
-    }
 }

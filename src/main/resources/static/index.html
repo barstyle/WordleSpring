@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Five Letters Wordle Helper</title>
+    <link rel="stylesheet" href="index-style.css">
+</head>
+<body>
+<h1>Слова из 5-ти букв</h1>
+<div class="input-with-keyboard">
+    <label for="required">Обязательные буквы (например: ао):</label>
+    <input type="text" id="required" class="text-input" placeholder="Буквы, которые должны быть в слове">
+    <div class="keyboard-container">
+        <div class="keyboard-row">
+            <button class="key">й</button>
+            <button class="key">ц</button>
+            <button class="key">у</button>
+            <button class="key">к</button>
+            <button class="key">е</button>
+            <button class="key">н</button>
+            <button class="key">г</button>
+            <button class="key">ш</button>
+            <button class="key">щ</button>
+            <button class="key">з</button>
+            <button class="key">х</button>
+            <button class="key">ъ</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key">ф</button>
+            <button class="key">ы</button>
+            <button class="key">в</button>
+            <button class="key">а</button>
+            <button class="key">п</button>
+            <button class="key">р</button>
+            <button class="key">о</button>
+            <button class="key">л</button>
+            <button class="key">д</button>
+            <button class="key">ж</button>
+            <button class="key">э</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key">я</button>
+            <button class="key">ч</button>
+            <button class="key">с</button>
+            <button class="key">м</button>
+            <button class="key">и</button>
+            <button class="key">т</button>
+            <button class="key">ь</button>
+            <button class="key">б</button>
+            <button class="key">ю</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key special-key backspace" id="backspace-required">⌫</button>
+            <button class="key special-key clear-field" id="clear-field-required">Очистить</button>
+        </div>
+    </div>
+</div>
+
+<div class="input-with-keyboard">
+    <label for="excluded">Исключённые буквы (например: бвг):</label>
+    <input type="text" id="excluded" class="text-input" placeholder="Буквы, которых не должно быть в слове">
+    <div class="keyboard-container">
+        <div class="keyboard-row">
+            <button class="key">й</button>
+            <button class="key">ц</button>
+            <button class="key">у</button>
+            <button class="key">к</button>
+            <button class="key">е</button>
+            <button class="key">н</button>
+            <button class="key">г</button>
+            <button class="key">ш</button>
+            <button class="key">щ</button>
+            <button class="key">з</button>
+            <button class="key">х</button>
+            <button class="key">ъ</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key">ф</button>
+            <button class="key">ы</button>
+            <button class="key">в</button>
+            <button class="key">а</button>
+            <button class="key">п</button>
+            <button class="key">р</button>
+            <button class="key">о</button>
+            <button class="key">л</button>
+            <button class="key">д</button>
+            <button class="key">ж</button>
+            <button class="key">э</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key">я</button>
+            <button class="key">ч</button>
+            <button class="key">с</button>
+            <button class="key">м</button>
+            <button class="key">и</button>
+            <button class="key">т</button>
+            <button class="key">ь</button>
+            <button class="key">б</button>
+            <button class="key">ю</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key special-key backspace" id="backspace-excluded">⌫</button>
+            <button class="key special-key clear-field" id="clear-field-excluded">Очистить</button>
+        </div>
+    </div>
+
+    <label>Фиксированные позиции (слова на своих местах):</label>
+    <div class="fixed-positions">
+        <div>
+            <label for="pos0"></label>
+            <input type="text" id="pos0" maxlength="1"/>
+<!--            <div class="position-label">первая</div>-->
+        </div>
+        <div>
+            <label for="pos1"></label>
+            <input type="text" id="pos1" maxlength="1"/>
+<!--            <div class="position-label">вторая</div>-->
+        </div>
+        <div>
+            <label for="pos2"></label>
+            <input type="text" id="pos2" maxlength="1"/>
+<!--            <div class="position-label">третья</div>-->
+        </div>
+        <div>
+            <label for="pos3"></label>
+            <input type="text" id="pos3" maxlength="1"/>
+<!--            <div class="position-label">четвертая</div>-->
+        </div>
+        <div>
+            <label for="pos4"></label>
+            <input type="text" id="pos4" maxlength="1"/>
+<!--            <div class="position-label">пятая</div>-->
+        </div>
+    </div>
+
+    <button onclick="submitRequest()">Найти слова</button>
+    <button onclick="resetDictionary()">Сбросить словарь</button>
+
+    <div id="result"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
